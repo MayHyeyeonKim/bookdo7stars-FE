@@ -100,9 +100,13 @@ const CartPage = () => {
       ) : (
         <Box display="flex" alignItems="center">
           <Typography variant="h6" component="span" mr={2}>
-            ₩{currencyFormat(100000 - finalTotalPrice)} 더 담으면 무료 배송 🚚
+            <Box component="span" color="primary.main">
+              {' '}
+              {/* 여기에서 색상을 변경 */}₩{currencyFormat(100000 - finalTotalPrice)}
+            </Box>{' '}
+            더 담으면 무료 배송
           </Typography>
-          <Button variant="contained" color="primary" onClick={() => navigate('/')}>
+          <Button variant="contained" color="primary" style={{ fontSize: isMobile ? '0.7rem' : '1rem', whiteSpace: 'nowrap' }} onClick={() => navigate('/')}>
             더 담으러 가기
           </Button>
         </Box>
@@ -143,10 +147,10 @@ const CartPage = () => {
             bgcolor: '#f5f5f5',
             borderRadius: '25px',
           }}>
-          <Typography variant="h6" pb={1}>
+          <Typography variant="h6" pb={1} ml={5} mt={1}>
             반갑습니다 {user?.userName?.toUpperCase()}님!
           </Typography>
-          <Typography variant="body1">
+          <Typography variant="body1" ml={5} mb={1}>
             {user?.userName?.toUpperCase()}님의 등급은{' '}
             <Box component="span" fontWeight="bold" color="primary">
               {user?.level?.toUpperCase()}
@@ -159,7 +163,11 @@ const CartPage = () => {
         <Box display="flex" justifyContent="space-between" mb={2} mt={2} alignItems="center" p={1}>
           <Typography variant="h6">{recommend}</Typography>
           <Box>
-            <SortMenu selectedSortOption={selectedSortOption} onSelectSortOption={handleSortOptionSelect} />
+            <SortMenu
+              selectedSortOption={selectedSortOption}
+              onSelectSortOption={handleSortOptionSelect}
+              typographyStyle={{ fontSize: isMobile ? '0.7rem' : '1rem', whiteSpace: 'nowrap' }} // 모바일 스타일 적용
+            />
           </Box>
         </Box>
         <Box display="flex" justifyContent="space-between" mt={2}>
@@ -179,10 +187,10 @@ const CartPage = () => {
                 control={<Checkbox checked={selectedItems.length === cartList.length} onChange={handleSelectAll} color="primary" />}
                 label={<Typography style={{ fontSize: isMobile ? '0.7rem' : '1rem' }}>전체 선택</Typography>}
               />
-              <Typography style={{ fontSize: isMobile ? '0.7rem' : '1rem' }}>상품{'\n'}정보</Typography>
+              <Typography style={{ fontSize: isMobile ? '0.7rem' : '1rem' }}>상품 정보</Typography>
               <Typography style={{ fontSize: isMobile ? '0.7rem' : '1rem' }}>수량</Typography>
-              <Typography style={{ fontSize: isMobile ? '0.7rem' : '1rem' }}>상품{'\n'}금액</Typography>
-              <Typography style={{ fontSize: isMobile ? '0.7rem' : '1rem' }}>배송{'\n'}정보</Typography>
+              <Typography style={{ fontSize: isMobile ? '0.7rem' : '1rem' }}>상품 금액</Typography>
+              <Typography style={{ fontSize: isMobile ? '0.7rem' : '1rem', whiteSpace: 'nowrap' }}>배송 정보</Typography>
               <Typography style={{ fontSize: isMobile ? '0.7rem' : '1rem' }}>삭제</Typography>
             </Box>
             {sortedCartList.length > 0 ? (

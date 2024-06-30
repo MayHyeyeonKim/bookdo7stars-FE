@@ -25,7 +25,19 @@ const getContactsByUser = () => async (dispatch) => {
   }
 };
 
+const getAllContacts = () => async (dispatch) => {
+  try {
+    dispatch({ type: types.GET_All_CONTACTS_REQUEST });
+    const response = await api.get('/contact');
+    dispatch({ type: types.GET_All_CONTACTS_SUCCESS, payload: response.data });
+  } catch (err) {
+    dispatch({ type: types.GET_All_CONTACTS_FAIL, payload: err.message });
+    dispatch(commonUiActions.showToastMessage(err.message, 'error'));
+  }
+};
+
 export const contactActions = {
   createContact,
   getContactsByUser,
+  getAllContacts,
 };

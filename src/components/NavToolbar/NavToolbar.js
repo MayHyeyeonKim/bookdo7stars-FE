@@ -247,8 +247,8 @@ const NavToolbar = () => {
             dispatch(bookActions.getBookList({}));
             dispatch(categoryActions.setSelectedCategory(null));
           }}
-          sx={{ cursor: 'pointer', padding: 1 }}>
-          <img src="/logo.png" alt="로고 이미지" style={{ color: '#d3ddbd', borderRadius: '3px', height: isMobile ? '4rem' : isTablet ? '5rem' : '7rem' }} />
+          sx={{ cursor: 'pointer', padding: 1, display: 'flex', alignItems: 'center', justifyContent: isMobile ? 'flex-start' : 'center' }}>
+          <img src="/logo1.png" alt="로고 이미지" style={{ color: '#d3ddbd', borderRadius: '3px', height: isMobile ? '3.5rem' : isTablet ? '5rem' : '7rem' }} />
         </Box>
         <Box sx={{ width: isMobile ? '100%' : isTablet ? '80%' : '70%', marginY: isMobile ? 2 : isTablet ? 1 : 0 }}>
           <SearchBook

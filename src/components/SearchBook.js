@@ -22,7 +22,7 @@ const StyledTextField = styled(TextField)(({ theme, isMobile }) => ({
   },
   '& .MuiInputBase-input': {
     padding: isMobile ? '8px 10px' : '12px 14px',
-    fontSize: isMobile ? '0.75rem' : '1rem',
+    fontSize: isMobile ? '0.55rem' : '1rem',
   },
   flexGrow: 1,
   flexShrink: 1,
@@ -91,7 +91,7 @@ const SearchBook = ({ searchQuery, setSearchQuery, fields, resetSearch }) => {
                 <SearchIcon />
               </InputAdornment>
             ),
-            style: isMobile ? { fontSize: '0.75rem' } : {},
+            style: isMobile ? { fontSize: '0.75rem' } : {}, // 모바일에서 글자 크기 조정
           }}
         />
         {!isMobile && (

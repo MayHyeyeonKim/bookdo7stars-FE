@@ -82,12 +82,18 @@ const CartProductCard = ({ item, isSelected, onSelectItem, userLevel, deliveryAd
           <Typography variant="body2" style={{ textDecoration: 'line-through', color: 'grey', fontSize: isMobile ? '0.8rem' : '1rem' }}>
             ₩ {currencyFormat(originalPrice)}
           </Typography>
-          <Typography variant="body2" color="primary" style={{ fontSize: isMobile ? '0.8rem' : '1rem' }}>
+          <Typography
+            variant="body2"
+            color="primary"
+            style={{
+              fontSize: isMobile ? '0.8rem' : '1rem',
+              whiteSpace: isMobile ? 'normal' : 'nowrap', // isMobile에 따른 조건부 스타일 적용
+            }}>
             ₩ {currencyFormat(discountedPrice)} ({(discountRate * 100).toFixed(0)}% 할인)
           </Typography>
         </Box>
         <Box display="flex" flexDirection="column" alignItems="center" width="15%">
-          <DeliveryEstimate address={deliveryAddress} />
+          <DeliveryEstimate address={deliveryAddress} isMobile={isMobile} /> {/* isMobile prop 추가 */}
         </Box>
         <IconButton onClick={() => handleDeleteClick(item._id, item.qty)} color="secondary" style={{ width: '5%' }}>
           <DeleteIcon />

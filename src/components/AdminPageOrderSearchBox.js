@@ -59,22 +59,23 @@ const AdminPageOrderSearchBox = ({ searchQuery, setSearchQuery, resetSearch }) =
           </Grid>
 
           {/* 검색 버튼 */}
-          <Grid item xs={12} sm={8} sx={{ display: 'flex', justifyContent: 'space-between' }}>
-            <Grid item xs={6}>
-              <Button
-                variant="contained"
-                color="primary"
-                fullWidth
-                sx={{ marginLeft: isMobile ? 0 : 1, width: isMobile ? '100%' : '30ch', height: '55px' }}
-                onClick={handleSearch}>
-                Search
-              </Button>
-            </Grid>
-            <Grid item xs={6}>
-              <Button variant="contained" color="primary" fullWidth sx={{ ml: -13, width: isMobile ? '100%' : '30ch', height: '55px' }} onClick={resetSearch}>
-                Reset
-              </Button>
-            </Grid>
+          <Grid item xs={12} sm={6} sx={{ display: 'flex', justifyContent: isMobile ? 'center' : 'flex-start' }}>
+            <Button
+              variant="contained"
+              color="primary"
+              fullWidth
+              sx={{ ml: isMobile ? 0 : 1, width: isMobile ? '100%' : '200px', height: '55px' }}
+              onClick={handleSearch}>
+              검색
+            </Button>
+            <Button
+              variant="contained"
+              color="primary"
+              fullWidth
+              sx={{ ml: isMobile ? 0 : 1, width: isMobile ? '100%' : '200px', height: '55px' }}
+              onClick={resetSearch}>
+              초기화
+            </Button>
           </Grid>
         </Grid>
       </Grid>

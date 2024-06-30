@@ -38,7 +38,7 @@ const BookToCart = ({ favorite, selectedBook, fullAddress, deliveryInfo, deliver
   return (
     <Box display="flex" alignItems="center" gap={2}>
       <Button onClick={handleAddToCart} variant="contained" color="primary" startIcon={<AddShoppingCartIcon />} sx={{ height: '60px', flexGrow: 1 }}>
-        ADD TO CART
+        카트에 추가하기
       </Button>
       {favorite ? (
         <Button
@@ -47,11 +47,11 @@ const BookToCart = ({ favorite, selectedBook, fullAddress, deliveryInfo, deliver
           startIcon={<FavoriteBorderIcon sx={{ color: pink[500] }} />}
           sx={{ height: '60px', flexGrow: 1 }}
           onClick={deleteFavoriteClick}>
-          WISH
+          찜하기
         </Button>
       ) : (
         <Button variant="outlined" color="primary" startIcon={<FavoriteBorderIcon />} sx={{ height: '60px', flexGrow: 1 }} onClick={handleFavoriteClick}>
-          WISH
+          찜하기
         </Button>
       )}
     </Box>

@@ -10,6 +10,7 @@ import { pink } from '@mui/material/colors';
 import { favoriteActions } from '../action/favoriteActions';
 import { cartActions } from '../action/cartActions';
 import { commonUiActions } from '../action/commonUiAction';
+import { currencyFormat } from '../utils/number';
 
 const BookCard = ({ book, favorite, sx }) => {
   const navigate = useNavigate();
@@ -101,7 +102,7 @@ const BookCard = ({ book, favorite, sx }) => {
           </Typography>
           <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginTop: '8px' }}>
             <Typography variant="body2" color="text.primary">
-              {`₩${book.priceStandard}`}
+              ₩ {currencyFormat(book.priceStandard)}
             </Typography>
             <Box>
               {favorite ? (

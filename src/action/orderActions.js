@@ -17,10 +17,10 @@ const createOrder = (payload) => async (dispatch) => {
 };
 
 // 내 주문 조회.
-const getMyOrder = () => async (dispatch) => {
+const getMyOrder = (query) => async (dispatch) => {
   try {
     dispatch({ type: types.GET_ORDER_LIST_REQUEST });
-    const response = await api.get('/order/me');
+    const response = await api.get('/order/me', { params: { ...query } });
     dispatch({ type: types.GET_ORDER_SUCCESS, payload: response.data });
   } catch (err) {
     dispatch({ type: types.GET_ORDER_LIST_FAIL, payload: err.error });

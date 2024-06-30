@@ -38,6 +38,7 @@ const OrderReceipt = ({ finalTotalPrice, hasSelectedItems, cartList, handleCheck
       if (!cardInfo.expiryDate) newErrors.expiryDate = '정보를 입력해 주세요';
       if (!cardInfo.cvc) newErrors.cvc = '정보를 입력해 주세요';
     }
+    console.log(newErrors, 'newErrors');
 
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
@@ -76,12 +77,23 @@ const OrderReceipt = ({ finalTotalPrice, hasSelectedItems, cartList, handleCheck
     }
   };
   const handleKakaoPaymentSuccess = () => {
+    const newErrors = {};
+    if (!shippingInfo.name) newErrors.name = '이름를 입력해 주세요';
+    if (!shippingInfo.zipCode) newErrors.zipCode = '우편번호를 입력해 주세요';
+    if (!shippingInfo.address1) newErrors.address1 = '주소를 입력해 주세요';
+    if (!shippingInfo.phone) newErrors.phone = '전화번호를 입력해 주세요';
+    if (!shippingInfo.email) newErrors.email = '이메일를 입력해 주세요';
+
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
+      return;
+    }
     const { IMP } = window;
     IMP.init('imp58548074');
     IMP.request_pay(
       {
         pg: 'kakaopay', // 카카오페이
-        pay_method: 'card',
+        paymentMethod: 'Kakao Pay',
         merchant_uid: `mid_${new Date().getTime()}`, // 주문번호
         name: '주문명: 결제 테스트',
         amount: grandTotal, // 결제금액
@@ -114,7 +126,7 @@ const OrderReceipt = ({ finalTotalPrice, hasSelectedItems, cartList, handleCheck
               state: {
                 shippingInfo,
                 grandTotal,
-                paymentMethod: cardInfo.cardType,
+                paymentMethod: 'Kakao Pay',
               },
             });
           } catch (error) {
