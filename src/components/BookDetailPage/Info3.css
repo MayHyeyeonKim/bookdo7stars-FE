@@ -1,0 +1,31 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: white;
+  border-bottom: 1px solid #ccc;
+  z-index: 1000;
+}
+
+.tabs button {
+  padding: 10px 20px;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.tabs button.active {
+  color: white;
+  background-color: black;
+}
+
+.section {
+  padding: 100px 20px;
+  margin-top: 50px;
+}

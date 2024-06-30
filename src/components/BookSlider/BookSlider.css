@@ -1,0 +1,27 @@
+.custom-left-arrow,
+.custom-right-arrow {
+    background-color: transparent;
+    border: none;
+    color: #608020;
+    font-size: 3rem;
+    opacity: 40%;
+    /*padding: 10px;*/
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 3000;
+}
+
+.custom-left-arrow {
+    left: 0;
+}
+
+.custom-right-arrow {
+    right: 0;
+}
+
+/*.custom-left-arrow:hover,*/
+/*.custom-right-arrow:hover {*/
+/*    background-color: rgba(0, 0, 0, 0.7);*/
+/*}*/

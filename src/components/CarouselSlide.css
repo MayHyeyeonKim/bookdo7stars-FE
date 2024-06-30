@@ -1,0 +1,20 @@
+/* CarouselSlide.css */
+.carousel-container {
+    overflow: hidden;
+    margin-top: 3rem;
+  }
+  
+  .carousel-image {
+    width: 100vw;
+  }
+  
+  @media (max-width: 768px) {
+    .carousel-container {
+      margin-top: 1rem;
+    }
+  
+    .carousel-image {
+      width: 150vw; /* Make the image wider than the viewport */
+    }
+  }
+  

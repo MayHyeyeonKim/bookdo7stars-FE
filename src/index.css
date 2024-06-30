@@ -1,0 +1,21 @@
+body {
+  margin: 0;
+  font-family: 'IBM Plex Sans KR', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+/* 미디어 쿼리 예시 */
+/* @media (max-width: 600px) {
+  body {
+    font-size: 14px; 작은 화면에서는 폰트 크기를 줄임.
+  }
+
+  code {
+    font-size: 0.8em; 작은 화면에서 코드 폰트 크기를 줄임.
+  }
+} */

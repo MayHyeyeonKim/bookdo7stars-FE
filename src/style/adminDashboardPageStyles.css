@@ -1,0 +1,41 @@
+/* 기존 스타일 */
+.root {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    margin-top: 16px; /* theme.spacing(4)와 유사한 값 */
+  }
+  
+  .containerStyled {
+    padding-top: 16px; /* theme.spacing(4)와 유사한 값 */
+    padding-bottom: 16px; /* theme.spacing(4)와 유사한 값 */
+  }
+  
+  .paperStyled {
+    padding: 16px; /* theme.spacing(2)와 유사한 값 */
+    display: flex;
+    overflow: auto;
+    flex-direction: column;
+    cursor: pointer; /* 클릭 가능한 커서 */
+  }
+  
+  /* 추가 스타일 */
+  .deleteIcon {
+    color: #A6BB76; /* 갈색으로 설정 */
+  }
+
+
+/* 수정 아이콘 */
+.edit-icon {
+  color: #935d37; /* 기본 색상 */
+}
+.edit-icon:hover {
+  color: #C4D2A7; /* 호버 시 초록색 */
+}
+
+
+.deleteIcon:hover {
+  color: #935d37; /* 호버 시 갈색 */
+}
+
+  
