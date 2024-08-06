@@ -138,7 +138,7 @@ const LoginPage = () => {
               <Button fullWidth variant="outlined" color="primary" sx={{ mt: 1, mb: 2 }} startIcon={<GitHubIcon />} onClick={handleGithubLogin}>
                 Sign in with GitHub
               </Button>
-              <Button
+              {/* <Button
                 fullWidth
                 variant="outlined"
                 color="primary"
@@ -146,7 +146,7 @@ const LoginPage = () => {
                 startIcon={<img width="31" height="31" src="/image/kakao2.png" alt="KaKao" />}
                 onClick={handleKakaoLogin}>
                 Sign in with KaKao
-              </Button>
+              </Button> */}
             </Box>
           </Box>
         </Grid>
