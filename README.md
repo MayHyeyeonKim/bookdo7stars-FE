@@ -1,6 +1,6 @@
-# 🏆 97.1K YouTube Competition 2rd Place Winner 🏆
+# 🏆 97.1K YouTube Competition 2nd Place Winner 🏆
 
-**🏆 97.1K YouTube Competition 2rd Place Winner 🏆**  
+**🏆 97.1K YouTube Competition 2nd Place Winner 🏆**  
 [Link to the YouTube Channel](https://youtu.be/I4eYyL9HfsY?si=CaevphThfB3XQkMy)
 
 ## Table of Contents
